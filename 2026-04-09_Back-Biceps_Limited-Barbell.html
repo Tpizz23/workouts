@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back-Biceps — Limited-Barbell | 2026-04-09</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f1117;
+      color: #e8e8e8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 16px;
+      padding-bottom: 80px;
+    }
+    .accent { color: #3ecf8e; }
+    .card {
+      background: #1a1d27;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+      border: 1px solid #2a2d3a;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      background: #2a2d3a;
+      color: #aaa;
+    }
+    .badge-primary { background: #3ecf8e; color: #0f1117; }
+    .badge-bw { background: #2d7a4f; color: #fff; }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    .date-line { color: #888; font-size: 13px; margin-bottom: 16px; }
+    ul { list-style: none; }
+    ul li { padding: 5px 0; font-size: 14px; color: #ccc; border-bottom: 1px solid #222; }
+    ul li:last-child { border-bottom: none; }
+    ul li::before { content: '→ '; color: #3ecf8e; }
+    .snowflake li::before { content: '❄ '; color: #3ecf8e; }
+    .exercise-card {
+      background: #1f2230;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+      border: 1px solid #2a2d3a;
+    }
+    .exercise-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .exercise-desc { font-size: 12px; color: #888; margin-bottom: 10px; font-style: italic; }
+    .pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .pill { background: #2a2d3a; color: #bbb; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .pill-sets { color: #3ecf8e; }
+    .pill-reps { color: #5c8ef5; }
+    .exercise-note { font-size: 12px; color: #777; margin-bottom: 8px; }
+    .weight-input { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #999; }
+    .weight-input input { background: #2a2d3a; border: 1px solid #3a3d4a; border-radius: 6px; color: #fff; padding: 5px 8px; width: 64px; font-size: 13px; }
+    .weight-input input::placeholder { color: #555; }
+    .muscle-group-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #3ecf8e; margin: 20px 0 10px 0; padding-bottom: 6px; border-bottom: 1px solid #2a2d3a; }
+    .log-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+    .log-table th { background: #2a2d3a; color: #888; font-weight: 600; padding: 8px; text-align: left; border-radius: 6px; }
+    .log-table td { padding: 8px; border-bottom: 1px solid #222; }
+    .log-table input { background: #2a2d3a; border: 1px solid #3a3d4a; border-radius: 4px; color: #fff; padding: 4px 6px; width: 52px; font-size: 13px; }
+    .log-table input::placeholder { color: #555; }
+    footer { text-align: center; color: #444; font-size: 12px; margin-top: 30px; padding-top: 16px; border-top: 1px solid #1a1d27; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="card" style="border-left: 4px solid #3ecf8e;">
+  <h1>🔙 <span class="accent">Back + Biceps</span></h1>
+  <div class="date-line">Thursday, April 9, 2026 &nbsp;·&nbsp; Limited-Barbell (Home)</div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap;">
+    <span class="badge badge-primary">🏠 Limited-Barbell</span>
+    <span class="badge">⏱ 45–60 min</span>
+    <span class="badge">🎯 Bulk: 165 → 180 lb</span>
+  </div>
+</div>
+
+<!-- WARM-UP -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">🔥</span>
+    <span class="card-title">Warm-Up <span style="font-weight:400; color:#666; font-size:13px;">(5 min)</span></span>
+  </div>
+  <ul>
+    <li>Cat-cow stretches — 30 sec, mobilizing the entire spine</li>
+    <li>Band pull-aparts or reverse snow angels × 10 — rear delt activation</li>
+    <li>DB swing or ghost deadlift × 10 — hip hinge pattern warm-up</li>
+    <li>Single-arm DB row hold × 5/side — scapula retraction activation</li>
+    <li>Bodyweight superman hold × 8 — lower back activation</li>
+  </ul>
+</div>
+
+<!-- WORKOUT -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">🏋️</span>
+    <span class="card-title">Workout</span>
+  </div>
+
+  <!-- BACK -->
+  <div class="muscle-group-title">BACK <span style="font-weight:400; color:#888;">(5 exercises)</span></div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Bent-Over Row</div>
+    <div class="exercise-desc">Hinge forward at the hips with a flat back, then pull the dumbbell toward your hip by driving your elbow back and squeezing your shoulder blade.</div>
+    <div class="pills">
+      <span class="pill pill-sets">4 sets</span>
+      <span class="pill pill-reps">8–10 reps</span>
+    </div>
+    <div class="exercise-note">Primary compound — hinge at the hips, chest up, and pull with your elbow driving back. Alternate arms or do both together.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Single-Arm DB Row</div>
+    <div class="exercise-desc">Brace one hand and knee on a chair or couch, then pull the dumbbell straight up toward your hip, keeping your torso stable and parallel to the floor.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">10–12 reps</span>
+    </div>
+    <div class="exercise-note">Full range of motion — let the shoulder blade protract at the bottom and retract at the top. Squeeze hard at the top.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Renegade Row</div>
+    <div class="exercise-desc">In a plank position with one dumbbell on the floor, row the dumbbell to your hip while maintaining a rigid, straight body line.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">8–10 reps</span>
+    </div>
+    <div class="exercise-note">Core and back simultaneously — do not let your hips twist or sag. Brace hard through your entire midline.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Romanian Deadlift</div>
+    <div class="exercise-desc">Stand holding dumbbells in front of your thighs, push your hips back while keeping your legs nearly straight, lower the weights along your shins, then drive your hips forward to return.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">10–12 reps</span>
+    </div>
+    <div class="exercise-note">Hip hinge pattern — not a squat. Keep your lower back neutral and feel the stretch in your hamstrings at the bottom.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Reverse Snow Angel (prone)</div>
+    <div class="exercise-desc">Lie face-down on the floor with arms extended overhead, squeeze your shoulder blades together and sweep your arms out to the sides and back down in a snow angel arc.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12 reps</span>
+      <span class="pill badge-bw">Bodyweight</span>
+    </div>
+    <div class="exercise-note">Rear delts and rhomboids — keep arms slightly bent and squeeze the shoulder blades together hard at the top.</div>
+  </div>
+
+  <!-- BICEPS -->
+  <div class="muscle-group-title">BICEPS <span style="font-weight:400; color:#888;">(4 exercises)</span></div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Curl</div>
+    <div class="exercise-desc">Stand with dumbbells at your sides and curl them up toward your shoulders by contracting your biceps, then lower back down with control.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">10–12 reps</span>
+    </div>
+    <div class="exercise-note">Supinate (rotate wrists outward) at the top for a full contraction. No swinging — squeeze at the top for 1 second.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Hammer Curl</div>
+    <div class="exercise-desc">Curl the dumbbells up with a neutral grip (palms facing each other) keeping your elbows stationary at your sides.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12–15 reps</span>
+    </div>
+    <div class="exercise-note">Hits the brachialis and brachioradialis — these are the muscles that give your arm thickness below the bicep peak.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Concentration Curl</div>
+    <div class="exercise-desc">Sit with your elbow braced on the inside of your thigh and curl the dumbbell up to your shoulder, focusing on full contraction without body momentum.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12 reps</span>
+    </div>
+    <div class="exercise-note">Strict isolation — no body movement allowed. Full stretch at the bottom and a hard squeeze at the top of each rep.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Incline Curl</div>
+    <div class="exercise-desc">Lie back on a bench set to a low incline angle and let your arms hang straight down, then curl the dumbbells up to shoulder height.</div>
+    <div class="pills">
+      <span class="pill pill-sets">2 sets</span>
+      <span class="pill pill-reps">12 reps</span>
+    </div>
+    <div class="exercise-note">The incline stretch hits the long head of the bicep — the part that gives the bicep its peak. No cheating on the eccentric.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+</div>
+
+<!-- COOL-DOWN -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">❄️</span>
+    <span class="card-title">Cool-Down / Stretch <span style="font-weight:400; color:#666; font-size:13px;">(2 min)</span></span>
+  </div>
+  <ul class="snowflake">
+    <li>Doorframe lat stretch — arms extended in a doorframe, lean through for 30 sec</li>
+    <li>Child's pose — hold 30 sec, arms stretched forward, breathe into your back</li>
+    <li>Standing bicep stretch — pull one arm across chest with the other hand, 30 sec/side</li>
+    <li>Cat-cow cool-down — 5 slow reps to release spinal tension</li>
+    <li>5 deep breaths — focus on expanding your upper back on the inhale</li>
+  </ul>
+</div>
+
+<!-- PROGRESSIVE OVERLOAD LOG -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">📈</span>
+    <span class="card-title">Progressive Overload Log</span>
+  </div>
+  <p style="font-size:12px; color:#666; margin-bottom:10px;">Log your working weights. If all sets hit top of rep range with good form → increase weight 5 lb next session.</p>
+  <table class="log-table">
+    <thead>
+      <tr>
+        <th>Exercise</th>
+        <th>Set 1</th>
+        <th>Set 2</th>
+        <th>Set 3</th>
+        <th>Set 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DB Bent-Over Row</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+      </tr>
+      <tr>
+        <td>Single-Arm DB Row</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Renegade Row</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Romanian Deadlift</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Reverse Snow Angel</td>
+        <td colspan="4"><input type="text" placeholder="reps achieved (bodyweight)"></td>
+      </tr>
+      <tr>
+        <td>DB Curl</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Hammer Curl</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Concentration Curl</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Incline Curl</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  TJ's Workout Planner · Goal: 165 → 180 lb
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chest-Triceps — Limited-Barbell | 2026-04-07</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f1117;
+      color: #e8e8e8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 16px;
+      padding-bottom: 80px;
+    }
+    .accent { color: #5c8ef5; }
+    .card {
+      background: #1a1d27;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+      border: 1px solid #2a2d3a;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      background: #2a2d3a;
+      color: #aaa;
+    }
+    .badge-primary {
+      background: #5c8ef5;
+      color: #fff;
+    }
+    .badge-bw {
+      background: #2d7a4f;
+      color: #fff;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    .date-line {
+      color: #888;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    ul { list-style: none; }
+    ul li {
+      padding: 5px 0;
+      font-size: 14px;
+      color: #ccc;
+      border-bottom: 1px solid #222;
+    }
+    ul li:last-child { border-bottom: none; }
+    ul li::before { content: '→ '; color: #5c8ef5; }
+    .snowflake li::before { content: '❄ '; color: #5c8ef5; }
+    .exercise-card {
+      background: #1f2230;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+      border: 1px solid #2a2d3a;
+    }
+    .exercise-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .exercise-desc {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    .pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .pill {
+      background: #2a2d3a;
+      color: #bbb;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .pill-sets { color: #5c8ef5; }
+    .pill-reps { color: #3ecf8e; }
+    .exercise-note {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+    .weight-input {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #999;
+    }
+    .weight-input input {
+      background: #2a2d3a;
+      border: 1px solid #3a3d4a;
+      border-radius: 6px;
+      color: #fff;
+      padding: 5px 8px;
+      width: 64px;
+      font-size: 13px;
+    }
+    .weight-input input::placeholder { color: #555; }
+    .muscle-group-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #5c8ef5;
+      margin: 20px 0 10px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #2a2d3a;
+    }
+    .muscle-group-title.green { color: #3ecf8e; }
+    .muscle-group-title.orange { color: #f5a623; }
+    .log-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    .log-table th {
+      background: #2a2d3a;
+      color: #888;
+      font-weight: 600;
+      padding: 8px;
+      text-align: left;
+      border-radius: 6px;
+    }
+    .log-table td {
+      padding: 8px;
+      border-bottom: 1px solid #222;
+    }
+    .log-table input {
+      background: #2a2d3a;
+      border: 1px solid #3a3d4a;
+      border-radius: 4px;
+      color: #fff;
+      padding: 4px 6px;
+      width: 52px;
+      font-size: 13px;
+    }
+    .log-table input::placeholder { color: #555; }
+    footer {
+      text-align: center;
+      color: #444;
+      font-size: 12px;
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid #1a1d27;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="card" style="border-left: 4px solid #5c8ef5;">
+  <h1>💪 <span class="accent">Chest + Triceps</span></h1>
+  <div class="date-line">Tuesday, April 7, 2026 &nbsp;·&nbsp; Limited-Barbell (Home)</div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap;">
+    <span class="badge badge-primary">🏠 Limited-Barbell</span>
+    <span class="badge">⏱ 45–60 min</span>
+    <span class="badge">🎯 Bulk: 165 → 180 lb</span>
+    <span class="badge" style="background:#2d7a4f; color:#fff;">⚖️ Priority: Chest</span>
+  </div>
+</div>
+
+<!-- WARM-UP -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">🔥</span>
+    <span class="card-title">Warm-Up <span style="font-weight:400; color:#666; font-size:13px;">(5 min)</span></span>
+  </div>
+  <ul>
+    <li>Lightarm circles — forward and backward, 30 sec each</li>
+    <li>Foam roll or gentle chest stretches on floor, 1 min</li>
+    <li>Bodyweight push-ups × 10 (slow, controlled tempo)</li>
+    <li>Light DB floor press × 8 with 5 lb — blood flow activation</li>
+    <li>Shoulder blade squeezes × 10 — rear delt activation</li>
+  </ul>
+</div>
+
+<!-- WORKOUT -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">🏋️</span>
+    <span class="card-title">Workout</span>
+  </div>
+
+  <!-- CHEST (5 exercises — Chest Bonus Rule applied) -->
+  <div class="muscle-group-title">CHEST <span style="font-weight:400; color:#5c8ef5;">(5 exercises — priority focus)</span></div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Floor Press</div>
+    <div class="exercise-desc">Lie flat on your back on the floor and press the dumbbells up from chest level until your arms are straight.</div>
+    <div class="pills">
+      <span class="pill pill-sets">4 sets</span>
+      <span class="pill pill-reps">8–10 reps</span>
+    </div>
+    <div class="exercise-note">Primary compound — go heavy and controlled. Pause briefly at the chest.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Wide Push-Up</div>
+    <div class="exercise-desc">Standard push-up with hands placed wider than shoulder-width, lowering your chest to the floor.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12–15 reps</span>
+      <span class="pill badge-bw">Bodyweight</span>
+    </div>
+    <div class="exercise-note">Hands slightly wider than shoulders. Full range of motion — chest taps floor if possible.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Incline Push-Up (feet elevated on couch)</div>
+    <div class="exercise-desc">Push-up with feet raised on a couch or sturdy elevated surface, hands on the floor.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">10–15 reps</span>
+      <span class="pill badge-bw">Bodyweight</span>
+    </div>
+    <div class="exercise-note">Feet elevated 12–18 inches. Emphasizes upper chest. Keep core tight and hips flat.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Floor Fly</div>
+    <div class="exercise-desc">Lie on your back on the floor with arms extended above chest in a slight arc, then lower the dumbbells out to the sides with a slight bend in the elbows and return.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">10–12 reps</span>
+    </div>
+    <div class="exercise-note">Controlled descent — feel the stretch at the chest at the bottom. Squeeze hard at the top.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Decline Push-Up (hands elevated on couch)</div>
+    <div class="exercise-desc">Push-up with hands on a couch or elevated surface and feet on the floor, targeting the lower chest.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">10–15 reps</span>
+      <span class="pill badge-bw">Bodyweight</span>
+    </div>
+    <div class="exercise-note">Hands on couch edge, body in a straight line from head to heels. Drive through your hands.</div>
+  </div>
+
+  <!-- TRICEPS -->
+  <div class="muscle-group-title">TRICEPS <span style="font-weight:400; color:#888;">(3 exercises)</span></div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Skull Crusher (floor)</div>
+    <div class="exercise-desc">Lie on your back on the floor and lower the dumbbells toward your temples by bending only at the elbows, then extend arms back up.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">10–12 reps</span>
+    </div>
+    <div class="exercise-note">Keep elbows pointed toward the ceiling and tucked in — don't let them flare out.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Overhead Tricep Extension</div>
+    <div class="exercise-desc">Stand or sit and press a dumbbell straight overhead with both hands, then lower it slowly behind your head by bending at the elbows and return.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12–15 reps</span>
+    </div>
+    <div class="exercise-note">Keep upper arms stationary and close to your ears. Full stretch at the bottom.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Close-Grip Push-Up</div>
+    <div class="exercise-desc">Push-up with hands placed directly under your chest, elbows tracking close to your ribs as you lower and press.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">10–15 reps</span>
+      <span class="pill badge-bw">Bodyweight</span>
+    </div>
+    <div class="exercise-note">Hands touching or slightly inside shoulder width. Elbows stay tight to your sides.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Kickback</div>
+    <div class="exercise-desc">Hinge at the hips with one arm supporting your weight, then extend the dumbbell straight back by contracting the tricep.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12–15 reps</span>
+    </div>
+    <div class="exercise-note">Full extension at the top — squeeze the tricep hard. Keep upper arm parallel to the floor throughout.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+</div>
+
+<!-- COOL-DOWN -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">❄️</span>
+    <span class="card-title">Cool-Down / Stretch <span style="font-weight:400; color:#666; font-size:13px;">(2 min)</span></span>
+  </div>
+  <ul class="snowflake">
+    <li>Child's pose — hold 30 sec, breathe deep</li>
+    <li>Doorframe chest stretch — 30 sec per side, arms at 90°</li>
+    <li>Tricep stretch — overhead reach and gently pull elbow across head, 30 sec/side</li>
+    <li>Seated forward fold — stretch lats and chest, 30 sec</li>
+    <li>Deep breathing — 5 slow, full breaths to close the session</li>
+  </ul>
+</div>
+
+<!-- PROGRESSIVE OVERLOAD LOG -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">📈</span>
+    <span class="card-title">Progressive Overload Log</span>
+  </div>
+  <p style="font-size:12px; color:#666; margin-bottom:10px;">Log your working weights. If all sets hit top of rep range with good form → increase weight 5 lb next session.</p>
+  <table class="log-table">
+    <thead>
+      <tr>
+        <th>Exercise</th>
+        <th>Set 1</th>
+        <th>Set 2</th>
+        <th>Set 3</th>
+        <th>Set 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DB Floor Press</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+      </tr>
+      <tr>
+        <td>Wide Push-Up</td>
+        <td colspan="4"><input type="text" placeholder="reps achieved (bodyweight)"></td>
+      </tr>
+      <tr>
+        <td>Incline Push-Up</td>
+        <td colspan="4"><input type="text" placeholder="reps achieved (bodyweight)"></td>
+      </tr>
+      <tr>
+        <td>DB Floor Fly</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Decline Push-Up</td>
+        <td colspan="4"><input type="text" placeholder="reps achieved (bodyweight)"></td>
+      </tr>
+      <tr>
+        <td>DB Skull Crusher</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Overhead Tricep Extension</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Close-Grip Push-Up</td>
+        <td colspan="4"><input type="text" placeholder="reps achieved (bodyweight)"></td>
+      </tr>
+      <tr>
+        <td>DB Kickback</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  TJ's Workout Planner · Goal: 165 → 180 lb
+</footer>
+
+</body>
+</html>

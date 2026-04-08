@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chest-Triceps — Full-Gym | 2026-04-07</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f1117;
+      color: #e8e8e8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 16px;
+      padding-bottom: 80px;
+    }
+    .accent { color: #5c8ef5; }
+    .card {
+      background: #1a1d27;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+      border: 1px solid #2a2d3a;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      background: #2a2d3a;
+      color: #aaa;
+    }
+    .badge-primary {
+      background: #5c8ef5;
+      color: #fff;
+    }
+    .badge-bw {
+      background: #2d7a4f;
+      color: #fff;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    .date-line {
+      color: #888;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    ul { list-style: none; }
+    ul li {
+      padding: 5px 0;
+      font-size: 14px;
+      color: #ccc;
+      border-bottom: 1px solid #222;
+    }
+    ul li:last-child { border-bottom: none; }
+    ul li::before { content: '→ '; color: #5c8ef5; }
+    .snowflake li::before { content: '❄ '; color: #5c8ef5; }
+    .exercise-card {
+      background: #1f2230;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+      border: 1px solid #2a2d3a;
+    }
+    .exercise-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .exercise-desc {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    .pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .pill {
+      background: #2a2d3a;
+      color: #bbb;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .pill-sets { color: #5c8ef5; }
+    .pill-reps { color: #3ecf8e; }
+    .exercise-note {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+    .weight-input {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #999;
+    }
+    .weight-input input {
+      background: #2a2d3a;
+      border: 1px solid #3a3d4a;
+      border-radius: 6px;
+      color: #fff;
+      padding: 5px 8px;
+      width: 64px;
+      font-size: 13px;
+    }
+    .weight-input input::placeholder { color: #555; }
+    .muscle-group-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #5c8ef5;
+      margin: 20px 0 10px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #2a2d3a;
+    }
+    .muscle-group-title.green { color: #3ecf8e; }
+    .muscle-group-title.orange { color: #f5a623; }
+    .log-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    .log-table th {
+      background: #2a2d3a;
+      color: #888;
+      font-weight: 600;
+      padding: 8px;
+      text-align: left;
+      border-radius: 6px;
+    }
+    .log-table td {
+      padding: 8px;
+      border-bottom: 1px solid #222;
+    }
+    .log-table input {
+      background: #2a2d3a;
+      border: 1px solid #3a3d4a;
+      border-radius: 4px;
+      color: #fff;
+      padding: 4px 6px;
+      width: 52px;
+      font-size: 13px;
+    }
+    .log-table input::placeholder { color: #555; }
+    footer {
+      text-align: center;
+      color: #444;
+      font-size: 12px;
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid #1a1d27;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="card" style="border-left: 4px solid #5c8ef5;">
+  <h1>💪 <span class="accent">Chest + Triceps</span></h1>
+  <div class="date-line">Tuesday, April 7, 2026 &nbsp;·&nbsp; Full-Gym</div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap;">
+    <span class="badge badge-primary">🏋️ Full-Gym</span>
+    <span class="badge">⏱ 45–60 min</span>
+    <span class="badge">🎯 Bulk: 165 → 180 lb</span>
+    <span class="badge" style="background:#2d7a4f; color:#fff;">⚖️ Priority: Chest</span>
+  </div>
+</div>
+
+<!-- WARM-UP -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">🔥</span>
+    <span class="card-title">Warm-Up <span style="font-weight:400; color:#666; font-size:13px;">(5 min)</span></span>
+  </div>
+  <ul>
+    <li>Lightarm circles — forward and backward, 30 sec each direction</li>
+    <li>Dynamic chest stretches in doorframe — 1 min total</li>
+    <li>Light barbell bench press with just the bar × 8 reps</li>
+    <li>Cable fly warm-up set with very light weight × 10</li>
+    <li>Shoulder blade squeezes and band pull-aparts × 10</li>
+  </ul>
+</div>
+
+<!-- WORKOUT -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">🏋️</span>
+    <span class="card-title">Workout</span>
+  </div>
+
+  <!-- CHEST (5 exercises — Chest Bonus Rule) -->
+  <div class="muscle-group-title">CHEST <span style="font-weight:400; color:#5c8ef5;">(5 exercises — priority focus)</span></div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Barbell Bench Press</div>
+    <div class="exercise-desc">Lie flat on a bench, lower the barbell to your mid-chest, then press it back up to full arm extension.</div>
+    <div class="pills">
+      <span class="pill pill-sets">4 sets</span>
+      <span class="pill pill-reps">6–8 reps</span>
+    </div>
+    <div class="exercise-note">Primary compound — go heavy with 2–3 min rest between sets. Arch your back slightly and drive your feet into the floor.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Incline DB Press</div>
+    <div class="exercise-desc">Set an adjustable bench to 30–45 degrees and press dumbbells from chest level up to full extension.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">8–10 reps</span>
+    </div>
+    <div class="exercise-note">Upper chest emphasis. Keep a slight inward angle on the dumbbells at the top to squeeze the inner chest.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Cable Fly (low to high)</div>
+    <div class="exercise-desc">Stand between two cable stations set low, grips in each hand, and bring your arms together in an arc in front of your chest.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12–15 reps</span>
+    </div>
+    <div class="exercise-note">Full stretch at the bottom and a hard squeeze at the top. Lean slightly forward to increase the arc.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Decline Barbell Press</div>
+    <div class="exercise-desc">Secure your legs at the top of a decline bench and press a barbell from your lower chest down to full extension.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">8–10 reps</span>
+    </div>
+    <div class="exercise-note">Lower chest emphasis. Keep a controlled descent — 2 seconds down, 1 second pause, drive up.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Weighted Dips (chest lean)</div>
+    <div class="exercise-desc">Using dip bars or a bench, lean your torso forward slightly and lower yourself down, then press back up.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">8–12 reps</span>
+    </div>
+    <div class="exercise-note">Lean forward about 30° to shift emphasis to chest. Add weight with a dip belt if available.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <!-- TRICEPS -->
+  <div class="muscle-group-title">TRICEPS <span style="font-weight:400; color:#888;">(4 exercises)</span></div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Cable Tricep Pushdown (rope)</div>
+    <div class="exercise-desc">With a rope attachment on a high cable, push down by extending at the elbows until arms are fully straight, then return.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12–15 reps</span>
+    </div>
+    <div class="exercise-note">Keep elbows pinned to your sides. At the bottom, flair the rope ends outward to fully activate the triceps.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">EZ-Bar Skull Crusher</div>
+    <div class="exercise-desc">Lie on a flat bench and lower an EZ-bar toward your temples by bending only at the elbows, then extend back to full arm length.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">10–12 reps</span>
+    </div>
+    <div class="exercise-note">The angled grip is easier on the wrists. Control the negative — 2 seconds down, pause, squeeze up.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Overhead Tricep Extension (cable)</div>
+    <div class="exercise-desc">With a rope or single-handle on a high cable, pull the handle down behind your head by extending at the elbows, then return.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12–15 reps</span>
+    </div>
+    <div class="exercise-note">Keep upper arms perpendicular to the floor. Full stretch overhead and a hard contraction at the bottom.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Close-Grip Bench Press</div>
+    <div class="exercise-desc">Lie on a flat bench with hands placed close together on the bar (6–8 inches apart) and press straight up, lowering to the chest.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">8–10 reps</span>
+    </div>
+    <div class="exercise-note">Elbows stay tight to your sides — this keeps triceps fully engaged. Use a spotter for heavier sets.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+</div>
+
+<!-- COOL-DOWN -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">❄️</span>
+    <span class="card-title">Cool-Down / Stretch <span style="font-weight:400; color:#666; font-size:13px;">(2 min)</span></span>
+  </div>
+  <ul class="snowflake">
+    <li>Chest stretch in doorway — arms at 90°, lean through for 30 sec per side</li>
+    <li>Pec deck stretch — hold the open position for 30 sec</li>
+    <li>Overhead tricep stretch — gently pull elbow across forehead, 30 sec/side</li>
+    <li>Foam roll chest — slow roll each side for 1 min</li>
+    <li>5 deep breaths — full exhale to close the session</li>
+  </ul>
+</div>
+
+<!-- PROGRESSIVE OVERLOAD LOG -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">📈</span>
+    <span class="card-title">Progressive Overload Log</span>
+  </div>
+  <p style="font-size:12px; color:#666; margin-bottom:10px;">Log your working weights. If all sets hit top of rep range with good form → increase weight 5 lb next session.</p>
+  <table class="log-table">
+    <thead>
+      <tr>
+        <th>Exercise</th>
+        <th>Set 1</th>
+        <th>Set 2</th>
+        <th>Set 3</th>
+        <th>Set 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Barbell Bench Press</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+      </tr>
+      <tr>
+        <td>Incline DB Press</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Cable Fly</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Decline Barbell Press</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Weighted Dips</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Cable Tricep Pushdown</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>EZ-Bar Skull Crusher</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Overhead Tricep Extension</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Close-Grip Bench Press</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  TJ's Workout Planner · Goal: 165 → 180 lb
+</footer>
+
+</body>
+</html>

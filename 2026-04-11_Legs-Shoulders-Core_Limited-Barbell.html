@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legs-Shoulders-Core — Limited-Barbell | 2026-04-11</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0f1117; color: #e8e8e8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; min-height: 100vh; padding: 16px; padding-bottom: 80px; }
+    .accent { color: #f5a623; }
+    .card { background: #1a1d27; border-radius: 12px; padding: 16px; margin-bottom: 14px; border: 1px solid #2a2d3a; }
+    .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .card-title { font-size: 15px; font-weight: 700; color: #fff; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; background: #2a2d3a; color: #aaa; }
+    .badge-primary { background: #f5a623; color: #0f1117; }
+    .badge-bw { background: #2d7a4f; color: #fff; }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    .date-line { color: #888; font-size: 13px; margin-bottom: 16px; }
+    ul { list-style: none; }
+    ul li { padding: 5px 0; font-size: 14px; color: #ccc; border-bottom: 1px solid #222; }
+    ul li:last-child { border-bottom: none; }
+    ul li::before { content: '→ '; color: #f5a623; }
+    .snowflake li::before { content: '❄ '; color: #f5a623; }
+    .exercise-card { background: #1f2230; border-radius: 10px; padding: 14px; margin-bottom: 12px; border: 1px solid #2a2d3a; }
+    .exercise-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .exercise-desc { font-size: 12px; color: #888; margin-bottom: 10px; font-style: italic; }
+    .pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .pill { background: #2a2d3a; color: #bbb; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .pill-sets { color: #f5a623; }
+    .pill-reps { color: #5c8ef5; }
+    .exercise-note { font-size: 12px; color: #777; margin-bottom: 8px; }
+    .weight-input { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #999; }
+    .weight-input input { background: #2a2d3a; border: 1px solid #3a3d4a; border-radius: 6px; color: #fff; padding: 5px 8px; width: 64px; font-size: 13px; }
+    .weight-input input::placeholder { color: #555; }
+    .muscle-group-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #f5a623; margin: 20px 0 10px 0; padding-bottom: 6px; border-bottom: 1px solid #2a2d3a; }
+    .log-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+    .log-table th { background: #2a2d3a; color: #888; font-weight: 600; padding: 8px; text-align: left; border-radius: 6px; }
+    .log-table td { padding: 8px; border-bottom: 1px solid #222; }
+    .log-table input { background: #2a2d3a; border: 1px solid #3a3d4a; border-radius: 4px; color: #fff; padding: 4px 6px; width: 52px; font-size: 13px; }
+    .log-table input::placeholder { color: #555; }
+    footer { text-align: center; color: #444; font-size: 12px; margin-top: 30px; padding-top: 16px; border-top: 1px solid #1a1d27; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="card" style="border-left: 4px solid #f5a623;">
+  <h1>🦵 <span class="accent">Legs + Shoulders + Core</span></h1>
+  <div class="date-line">Saturday, April 11, 2026 &nbsp;·&nbsp; Limited-Barbell (Home)</div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap;">
+    <span class="badge badge-primary">🏠 Limited-Barbell</span>
+    <span class="badge">⏱ 45–60 min</span>
+    <span class="badge">🎯 Bulk: 165 → 180 lb</span>
+  </div>
+</div>
+
+<!-- WARM-UP -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">🔥</span>
+    <span class="card-title">Warm-Up <span style="font-weight:400; color:#666; font-size:13px;">(5 min)</span></span>
+  </div>
+  <ul>
+    <li>Bodyweight squat × 10 — air squat to activate quads and glutes</li>
+    <li>Walking lunges × 8/leg — dynamic hip mobility and leg activation</li>
+    <li>Standing calf raise × 15 — warm up the calves before loading</li>
+    <li>Arm circles forward and backward × 10 each — shoulder mobility</li>
+    <li>DB goblet squat hold × 30 sec — leg and core activation with the load</li>
+  </ul>
+</div>
+
+<!-- WORKOUT -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">🏋️</span>
+    <span class="card-title">Workout</span>
+  </div>
+
+  <!-- LEGS -->
+  <div class="muscle-group-title">LEGS <span style="font-weight:400; color:#888;">(4 exercises)</span></div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Goblet Squat</div>
+    <div class="exercise-desc">Hold a dumbbell vertically at your chest like a goblet, then squat down between your legs keeping your elbows inside your knees, then stand back up.</div>
+    <div class="pills">
+      <span class="pill pill-sets">4 sets</span>
+      <span class="pill pill-reps">10–12 reps</span>
+    </div>
+    <div class="exercise-note">Primary compound for legs — go heavy and aim for full depth (hip crease below knee). Keep your chest up and elbows tracking between your knees.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Bulgarian Split Squat</div>
+    <div class="exercise-desc">Stand with the instep of one foot on a chair or bench behind you, lower your back knee toward the floor in a split-squat position, then drive through your front heel to return.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">8–10 reps/leg</span>
+    </div>
+    <div class="exercise-note">Front foot far enough forward that your knee stays over your toes. Rear foot elevated on the bench for balance. Squeeze your glute at the top.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Romanian Deadlift</div>
+    <div class="exercise-desc">Stand holding dumbbells in front of your thighs, push your hips back while keeping your legs nearly straight, lower the weights along your shins, then drive your hips forward to return.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">10–12 reps</span>
+    </div>
+    <div class="exercise-note">Hip hinge — not a squat. Keeps legs mostly straight to isolate the hamstrings and glutes. Feel the stretch in your hamstrings at the bottom.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Single-Leg Calf Raise</div>
+    <div class="exercise-desc">Stand on one leg on the edge of a step with your heel hanging off, then lower your heel below the step and rise up on your toes as high as possible.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">15–20 reps/leg</span>
+    </div>
+    <div class="exercise-note">Full range of motion — drop the heel well below the step for a deep stretch at the bottom. Hold a dumbbell in the opposite hand for added resistance.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <!-- SHOULDERS -->
+  <div class="muscle-group-title">SHOULDERS <span style="font-weight:400; color:#888;">(3 exercises)</span></div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Overhead Press</div>
+    <div class="exercise-desc">Stand or sit with dumbbells at shoulder height, then press them straight overhead until your arms are fully extended, then lower back to the start position.</div>
+    <div class="pills">
+      <span class="pill pill-sets">4 sets</span>
+      <span class="pill pill-reps">8–10 reps</span>
+    </div>
+    <div class="exercise-note">Primary compound for shoulders. Keep your core braced and avoid excessive back arch. Drive through your whole hand, not just your fingers.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Lateral Raise</div>
+    <div class="exercise-desc">Stand with dumbbells at your sides and raise your arms out to the sides in a wide arc until they reach shoulder height, elbows slightly bent.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12–15 reps</span>
+    </div>
+    <div class="exercise-note">Slight forward lean and pinky finger slightly higher than your thumb at the top. No swinging — control the weight on the way down.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Rear Delt Fly</div>
+    <div class="exercise-desc">Bend over at the hips with a slight bend in your elbows, then raise the dumbbells out to the sides in an arc, squeezing your shoulder blades together at the top.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">12–15 reps</span>
+    </div>
+    <div class="exercise-note">Targets the rear deltoids and upper back. Keep your chest up and eyes down to maintain a flat back. Squeeze the shoulder blades together at the top.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <!-- CORE -->
+  <div class="muscle-group-title">CORE <span style="font-weight:400; color:#888;">(2 exercises)</span></div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">DB Russian Twist</div>
+    <div class="exercise-desc">Sit with your knees bent and feet off the floor, holding a dumbbell at your chest, then rotate your torso side to side, touching the weight to the floor beside each hip.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">20 reps (10/side)</span>
+    </div>
+    <div class="exercise-note">Feet stay elevated throughout. Keep your core braced and rotate from yourobliques, not your arms. Slow and controlled — no momentum.</div>
+    <div class="weight-input">
+      Weight (lb): <input type="text" placeholder="—">
+    </div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="exercise-name">Plank</div>
+    <div class="exercise-desc">Hold a push-up position with your forearms flat on the floor, body in a perfectly straight line from head to heels, bracing your core hard throughout.</div>
+    <div class="pills">
+      <span class="pill pill-sets">3 sets</span>
+      <span class="pill pill-reps">45–60 sec</span>
+      <span class="pill badge-bw">Bodyweight</span>
+    </div>
+    <div class="exercise-note">Do not let your hips sag or pike. Brace as if someone were about to punch you in the stomach. Breathe normally — don't hold your breath.</div>
+  </div>
+
+</div>
+
+<!-- COOL-DOWN -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">❄️</span>
+    <span class="card-title">Cool-Down / Stretch <span style="font-weight:400; color:#666; font-size:13px;">(2 min)</span></span>
+  </div>
+  <ul class="snowflake">
+    <li>Quad stretch — standing, pull your foot to your glute, 30 sec/side</li>
+    <li>Seated hamstring stretch — sit with one leg extended, reach for your toes, 30 sec/side</li>
+    <li>Calf stretch against the wall — 30 sec/side with a slight knee bend for the soleus</li>
+    <li>Cat-cow — 5 slow reps, exhale fully on the round back</li>
+    <li>Deep breathing — 5 slow, full belly breaths to close the session</li>
+  </ul>
+</div>
+
+<!-- PROGRESSIVE OVERLOAD LOG -->
+<div class="card">
+  <div class="card-header">
+    <span style="font-size:18px;">📈</span>
+    <span class="card-title">Progressive Overload Log</span>
+  </div>
+  <p style="font-size:12px; color:#666; margin-bottom:10px;">Log your working weights. If all sets hit top of rep range with good form → increase weight 5 lb next session.</p>
+  <table class="log-table">
+    <thead>
+      <tr>
+        <th>Exercise</th>
+        <th>Set 1</th>
+        <th>Set 2</th>
+        <th>Set 3</th>
+        <th>Set 4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DB Goblet Squat</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+      </tr>
+      <tr>
+        <td>DB Bulgarian Split Squat</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Romanian Deadlift</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Single-Leg Calf Raise</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Overhead Press</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+      </tr>
+      <tr>
+        <td>DB Lateral Raise</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Rear Delt Fly</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>DB Russian Twist</td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td><input type="text" placeholder="lb × reps"></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Plank</td>
+        <td><input type="text" placeholder="sec held"></td>
+        <td><input type="text" placeholder="sec held"></td>
+        <td><input type="text" placeholder="sec held"></td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  TJ's Workout Planner · Goal: 165 → 180 lb
+</footer>
+
+</body>
+</html>
