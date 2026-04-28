@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TJ's Workouts</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0f1117; --card:#171b24; --card2:#202634; --text:#f4f7fb; --muted:#a8b3c7; --line:#2c3444; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: radial-gradient(circle at top, #20283a 0, var(--bg) 42rem); color:var(--text); }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 28px 16px 40px; }
+    header { padding: 18px 0 24px; }
+    .eyebrow { color:#7dd3fc; text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; font-weight:700; margin:0 0 8px; }
+    h1 { font-size: clamp(2rem, 8vw, 4rem); line-height:1; margin:0; }
+    .subtitle { color:var(--muted); font-size:1.05rem; line-height:1.5; margin:12px 0 0; max-width: 42rem; }
+    .stats { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+    .stat { border:1px solid var(--line); background:rgba(23,27,36,.75); border-radius:999px; padding:8px 12px; color:var(--muted); font-size:.9rem; }
+    .grid { display:grid; gap:14px; }
+    .card { border:1px solid color-mix(in srgb, var(--accent) 45%, var(--line)); background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 13%, var(--card)), var(--card)); border-radius:22px; padding:18px; box-shadow: 0 14px 34px rgba(0,0,0,.24); }
+    .card-top { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; margin-bottom:14px; }
+    .date { margin:0 0 4px; color:var(--muted); font-size:.9rem; }
+    h2 { margin:0; font-size:1.28rem; }
+    .pill { border:1px solid color-mix(in srgb, var(--accent) 60%, white 0%); color:var(--accent); background:rgba(255,255,255,.04); border-radius:999px; padding:6px 10px; white-space:nowrap; font-size:.78rem; font-weight:700; }
+    .links { display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:10px; }
+    .workout-link { display:flex; justify-content:space-between; align-items:center; gap:8px; text-decoration:none; color:var(--text); background:var(--card2); border:1px solid var(--line); border-radius:15px; padding:14px; font-weight:700; min-height:58px; }
+    .workout-link:hover, .workout-link:focus { border-color:var(--accent); outline:none; transform: translateY(-1px); }
+    .workout-link small { color:var(--muted); font-weight:600; }
+    footer { color:var(--muted); text-align:center; padding:26px 0 0; font-size:.9rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">Workout Library</p>
+      <h1>TJ's Workouts</h1>
+      <p class="subtitle">Choose a workout below. Each training day includes a Full Gym version and a Limited Barbell/home version.</p>
+      <div class="stats">
+        <span class="stat">13 workout days</span>
+        <span class="stat">26 total workouts</span>
+        <span class="stat">Goal: 165 → 180 lb</span>
+      </div>
+    </header>
+    <section class="grid" aria-label="Workout links">
+      <article class="card" style="--accent: #5c8ef5">
+        <div class="card-top">
+          <div>
+            <p class="date">Fri, May 1, 2026</p>
+            <h2>Chest + Triceps</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-05-01_Chest-Triceps_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-05-01_Chest-Triceps_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #f5a623">
+        <div class="card-top">
+          <div>
+            <p class="date">Thu, Apr 30, 2026</p>
+            <h2>Legs + Shoulders + Core</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-30_Legs-Shoulders-Core_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-30_Legs-Shoulders-Core_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #3ecf8e">
+        <div class="card-top">
+          <div>
+            <p class="date">Wed, Apr 29, 2026</p>
+            <h2>Back + Biceps</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-29_Back-Biceps_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-29_Back-Biceps_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #5c8ef5">
+        <div class="card-top">
+          <div>
+            <p class="date">Tue, Apr 28, 2026</p>
+            <h2>Chest + Triceps</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-28_Chest-Triceps_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-28_Chest-Triceps_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #f5a623">
+        <div class="card-top">
+          <div>
+            <p class="date">Fri, Apr 24, 2026</p>
+            <h2>Legs + Shoulders + Core</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-24_Legs-Shoulders-Core_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-24_Legs-Shoulders-Core_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #3ecf8e">
+        <div class="card-top">
+          <div>
+            <p class="date">Thu, Apr 23, 2026</p>
+            <h2>Back + Biceps</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-23_Back-Biceps_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-23_Back-Biceps_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #5c8ef5">
+        <div class="card-top">
+          <div>
+            <p class="date">Fri, Apr 17, 2026</p>
+            <h2>Chest + Triceps</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-17_Chest-Triceps_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-17_Chest-Triceps_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #f5a623">
+        <div class="card-top">
+          <div>
+            <p class="date">Thu, Apr 16, 2026</p>
+            <h2>Legs + Shoulders + Core</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-16_Legs-Shoulders-Core_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-16_Legs-Shoulders-Core_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #3ecf8e">
+        <div class="card-top">
+          <div>
+            <p class="date">Wed, Apr 15, 2026</p>
+            <h2>Back + Biceps</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-15_Back-Biceps_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-15_Back-Biceps_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #5c8ef5">
+        <div class="card-top">
+          <div>
+            <p class="date">Tue, Apr 14, 2026</p>
+            <h2>Chest + Triceps</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-14_Chest-Triceps_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-14_Chest-Triceps_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #f5a623">
+        <div class="card-top">
+          <div>
+            <p class="date">Sat, Apr 11, 2026</p>
+            <h2>Legs + Shoulders + Core</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-11_Legs-Shoulders-Core_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-11_Legs-Shoulders-Core_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #3ecf8e">
+        <div class="card-top">
+          <div>
+            <p class="date">Thu, Apr 9, 2026</p>
+            <h2>Back + Biceps</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-09_Back-Biceps_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-09_Back-Biceps_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+<article class="card" style="--accent: #5c8ef5">
+        <div class="card-top">
+          <div>
+            <p class="date">Tue, Apr 7, 2026</p>
+            <h2>Chest + Triceps</h2>
+          </div>
+          <span class="pill">2 versions</span>
+        </div>
+        <div class="links">
+          <a class="workout-link" href="2026-04-07_Chest-Triceps_Full-Gym.html"><span>🏋️ Full Gym</span><small>Open workout →</small></a>
+<a class="workout-link" href="2026-04-07_Chest-Triceps_Limited-Barbell.html"><span>🏠 Limited Barbell</span><small>Open workout →</small></a>
+        </div>
+      </article>
+    </section>
+    <footer>TJ's Workout Planner · Goal: 165 → 180 lb</footer>
+  </main>
+</body>
+</html>
