@@ -1,341 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Back-Biceps — Limited-Barbell | 2026-04-29</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-               background: #0f1117; color: #e0e0e0; min-height: 100vh; padding: 16px; }
-        .header-card { background: #3ecf8e22; border: 2px solid #3ecf8e; border-radius: 16px;
-                       padding: 20px; margin-bottom: 16px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e0e0e0; min-height: 100vh; padding: 16px; }
+        .header-card { background: #3ecf8e22; border: 2px solid #3ecf8e; border-radius: 16px; padding: 20px; margin-bottom: 16px; }
         .header-title { font-size: 1.5rem; font-weight: 700; color: #3ecf8e; margin-bottom: 8px; }
         .header-date { font-size: 1.1rem; color: #aaa; margin-bottom: 12px; }
         .badges { display: flex; gap: 8px; flex-wrap: wrap; }
-        .badge { background: #3ecf8e33; border: 1px solid #3ecf8e; border-radius: 20px;
-                 padding: 4px 12px; font-size: 0.8rem; color: #3ecf8e; }
-        .card { background: #1a1d27; border-radius: 12px; padding: 16px; margin-bottom: 16px;
-                border: 1px solid #2a2d3a; }
-        .section-title { font-size: 1rem; font-weight: 600; margin-bottom: 12px;
-                         padding-bottom: 8px; border-bottom: 1px solid #2a2d3a; color: #3ecf8e; }
+        .badge { background: #3ecf8e33; border: 1px solid #3ecf8e; border-radius: 20px; padding: 4px 12px; font-size: 0.8rem; color: #3ecf8e; }
+        .card { background: #1a1d27; border-radius: 12px; padding: 16px; margin-bottom: 16px; border: 1px solid #2a2d3a; }
+        .section-title { font-size: 1rem; font-weight: 600; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #2a2d3a; color: #3ecf8e; }
         .warmup-list, .cooldown-list { list-style: none; }
-        .warmup-list li, .cooldown-list li { padding: 6px 0; border-bottom: 1px solid #1e2130;
-                                            color: #c0c0d0; font-size: 0.9rem; }
-        .warmup-list li:last-child, .cooldown-list li:last-child { border-bottom: none; }
-        .muscle-group { margin-bottom: 20px; }
-        .muscle-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
-                        color: #3ecf8e; margin-bottom: 10px; font-weight: 600; }
-        .exercise-card { background: #141720; border-radius: 10px; padding: 14px; margin-bottom: 10px;
-                         border: 1px solid #252836; }
-        .exercise-name { font-size: 1rem; font-weight: 600; color: #e8e8f0; margin-bottom: 4px; }
-        .exercise-desc { font-size: 0.78rem; color: #808090; margin-bottom: 8px; font-style: italic; line-height: 1.4; }
-        .exercise-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
-        .sets-pill, .reps-pill { background: #1e2130; border-radius: 6px; padding: 3px 10px;
-                                  font-size: 0.75rem; color: #a0a0b0; }
-        .bw-pill { background: #2d6a4f; border-radius: 6px; padding: 3px 10px;
-                    font-size: 0.75rem; color: #95d5b2; }
-        .weight-pill { background: #2a4a7f; border-radius: 6px; padding: 3px 10px;
-                        font-size: 0.75rem; color: #90b8f5; }
-        .weight-row { display: flex; align-items: center; gap: 8px; }
-        .weight-row label { font-size: 0.75rem; color: #707080; white-space: nowrap; }
-        .weight-row input { flex: 1; background: #0f1117; border: 1px solid #2a2d3a; border-radius: 8px;
-                            padding: 6px 10px; color: #e0e0e0; font-size: 0.9rem; width: 80px; }
-        .weight-row input:focus { outline: none; border-color: #3ecf8e; }
-        input::placeholder { color: #404050; }
-        .log-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
-        .log-table th { background: #1e2130; color: #808090; padding: 6px 8px;
-                        text-align: left; font-weight: 600; border-bottom: 1px solid #2a2d3a; }
-        .log-muscle { color: #3ecf8e; font-weight: 600; }
-        .log-exercise { color: #c0c0d0; }
-        .log-sets, .log-reps { color: #808090; }
-        .log-table td { padding: 6px 8px; border-bottom: 1px solid #1e2130; vertical-align: middle; }
-        .log-input { background: #0f1117; border: 1px solid #2a2d3a; border-radius: 6px;
-                     padding: 4px 6px; color: #e0e0e0; width: 60px; font-size: 0.8rem; }
-        .log-input:focus { outline: none; border-color: #3ecf8e; }
-        .footer { text-align: center; color: #404050; font-size: 0.75rem; margin-top: 24px;
-                   padding: 12px; }
+        .warmup-list li, .cooldown-list li { padding: 6px 0; border-bottom: 1px solid #1e2130; color: #c0c0d0; font-size: 0.9rem; }
+        .muscle-group { margin-bottom: 20px; } .muscle-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #3ecf8e; margin-bottom: 10px; font-weight: 600; }
+        .exercise-card { background: #141720; border-radius: 10px; padding: 14px; margin-bottom: 10px; border: 1px solid #252836; }
+        .exercise-name { font-size: 1rem; font-weight: 600; color: #e8e8f0; margin-bottom: 4px; } .exercise-desc { font-size: 0.78rem; color: #808090; margin-bottom: 8px; font-style: italic; line-height: 1.4; }
+        .exercise-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; } .sets-pill, .reps-pill { background: #1e2130; border-radius: 6px; padding: 3px 10px; font-size: 0.75rem; color: #a0a0b0; }
+        .bw-pill { background: #2d6a4f; border-radius: 6px; padding: 3px 10px; font-size: 0.75rem; color: #95d5b2; } .weight-pill { background: #2a4a7f; border-radius: 6px; padding: 3px 10px; font-size: 0.75rem; color: #90b8f5; }
+        .weight-row { display: flex; align-items: center; gap: 8px; } .weight-row label { font-size: 0.75rem; color: #707080; white-space: nowrap; } .weight-row input { flex: 1; background: #0f1117; border: 1px solid #2a2d3a; border-radius: 8px; padding: 6px 10px; color: #e0e0e0; font-size: 0.9rem; width: 80px; }
+        .log-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; } .log-table th { background: #1e2130; color: #808090; padding: 6px 8px; text-align: left; font-weight: 600; border-bottom: 1px solid #2a2d3a; } .log-table td { padding: 6px 8px; border-bottom: 1px solid #1e2130; vertical-align: middle; }
+        .log-muscle { color: #3ecf8e; font-weight: 600; } .log-exercise { color: #c0c0d0; } .log-sets, .log-reps { color: #808090; } .log-input { background: #0f1117; border: 1px solid #2a2d3a; border-radius: 6px; padding: 4px 6px; color: #e0e0e0; width: 60px; font-size: 0.8rem; }
+        .footer { text-align: center; color: #404050; font-size: 0.75rem; margin-top: 24px; padding: 12px; }
     </style>
 </head>
 <body>
-    <div class="header-card">
-        <div class="header-title">Back + Biceps</div>
-        <div class="header-date">Wednesday, 2026-04-29</div>
-        <div class="badges">
-            <span class="badge">🏠 Home (Limited-Barbell)</span>
-            <span class="badge">⏱ 45–60 min</span>
-            <span class="badge">🎯 Goal: 165 → 180 lb</span>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2 class="section-title">🔥 Warm-Up (5 min)</h2>
-        <ul class="warmup-list">
-            <li>→ Cat-cow spinal mobility (10 reps, flowing)</li><li>→ Band pull-aparts (2×15, squeeze shoulder blades)</li><li>→ Scapular wall slides (10 reps, arms tracking up)</li><li>→ Light DB rows (1×12, focus on form)</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2 class="section-title">💪 Workout</h2>
-        
+    <div class="header-card"><div class="header-title">Back + Biceps</div><div class="header-date">Wednesday, 2026-04-29</div><div class="badges"><span class="badge">🏠 Home (Limited-Barbell)</span><span class="badge">🔁 B — squeeze and forearm variation</span><span class="badge">⏱ 45–60 min</span><span class="badge">🎯 Goal: 165 → 180 lb</span></div></div>
+    <div class="card"><h2 class="section-title">🔥 Warm-Up (5 min)</h2><ul class="warmup-list"><li>→ Cat-cow and thoracic rotations, 60 sec</li><li>→ Hip-hinge drill with empty hands, 2×10</li><li>→ Light single-arm DB rows, 1×12/side</li><li>→ Prone Y-T-W raises, 1 easy round</li></ul></div>
+    <div class="card"><h2 class="section-title">💪 Workout</h2>
         <div class="muscle-group">
             <h2 class="muscle-title">Back</h2>
-                    <div class="exercise-card">
-            <div class="exercise-name">DB Bent-Over Row</div>
-            <div class="exercise-desc">Hinge at the hips with a dumbbell in each hand, pull the weights up toward your hips by bending the elbows.</div>
+        <div class="exercise-card">
+            <div class="exercise-name">Chest-Supported DB Row on Couch</div>
+            <div class="exercise-desc">Lean chest-down on a couch or bench substitute and row without swinging.</div>
             <div class="exercise-meta">
                 <span class="sets-pill">4 sets</span>
-                <span class="reps-pill">8–10 reps</span>
+                <span class="reps-pill">8–12 reps</span>
                 <span class="weight-pill">Weight (lb)</span>
             </div>
-            <div class="weight-row">
-                <label>Weight (lb):</label>
-                <input type="number" placeholder="—" min="0" step="0.5">
-            </div>
+            <div class="weight-row"><label>Weight (lb):</label><input type="number" placeholder="—" min="0" step="0.5"></div>
         </div>
         <div class="exercise-card">
             <div class="exercise-name">Single-Arm DB Row</div>
-            <div class="exercise-desc">Place one hand and knee on a bench and row a heavy dumbbell up to your hip, full range of motion.</div>
+            <div class="exercise-desc">Brace one hand on a chair or couch and pull the dumbbell toward your hip.</div>
+            <div class="exercise-meta">
+                <span class="sets-pill">3 sets</span>
+                <span class="reps-pill">10–12/side reps</span>
+                <span class="weight-pill">Weight (lb)</span>
+            </div>
+            <div class="weight-row"><label>Weight (lb):</label><input type="number" placeholder="—" min="0" step="0.5"></div>
+        </div>
+        <div class="exercise-card">
+            <div class="exercise-name">DB Pullover Lat Focus</div>
+            <div class="exercise-desc">Move the dumbbell from overhead toward chest while thinking about pulling with your lats.</div>
             <div class="exercise-meta">
                 <span class="sets-pill">3 sets</span>
                 <span class="reps-pill">10–12 reps</span>
                 <span class="weight-pill">Weight (lb)</span>
             </div>
-            <div class="weight-row">
-                <label>Weight (lb):</label>
-                <input type="number" placeholder="—" min="0" step="0.5">
-            </div>
+            <div class="weight-row"><label>Weight (lb):</label><input type="number" placeholder="—" min="0" step="0.5"></div>
         </div>
         <div class="exercise-card">
-            <div class="exercise-name">DB Renegade Row</div>
-            <div class="exercise-desc">In a high plank position holding two dumbbells, row one weight to your hip while keeping the rest of your body stable.</div>
-            <div class="exercise-meta">
-                <span class="sets-pill">3 sets</span>
-                <span class="reps-pill">8–10 reps</span>
-                <span class="weight-pill">Weight (lb)</span>
-            </div>
-            <div class="weight-row">
-                <label>Weight (lb):</label>
-                <input type="number" placeholder="—" min="0" step="0.5">
-            </div>
-        </div>
-        <div class="exercise-card">
-            <div class="exercise-name">DB Romanian Deadlift</div>
-            <div class="exercise-desc">With dumbbells in front of your thighs, hinge at the hips and lower the weights along your legs, feeling a hamstring stretch.</div>
+            <div class="exercise-name">DB Row with 2-Second Squeeze</div>
+            <div class="exercise-desc">Pause with elbows back on each rep to make the mid-back work harder.</div>
             <div class="exercise-meta">
                 <span class="sets-pill">3 sets</span>
                 <span class="reps-pill">10–12 reps</span>
                 <span class="weight-pill">Weight (lb)</span>
             </div>
-            <div class="weight-row">
-                <label>Weight (lb):</label>
-                <input type="number" placeholder="—" min="0" step="0.5">
-            </div>
+            <div class="weight-row"><label>Weight (lb):</label><input type="number" placeholder="—" min="0" step="0.5"></div>
         </div>
         <div class="exercise-card">
-            <div class="exercise-name">Superman Hold</div>
-            <div class="exercise-desc">Lie face down and simultaneously lift your arms, chest, and legs off the ground, holding the Superman position.</div>
+            <div class="exercise-name">Prone Y-T-W Raise</div>
+            <div class="exercise-desc">Lie face-down and raise your arms into Y, T, and W positions for upper-back control.</div>
             <div class="exercise-meta">
                 <span class="sets-pill">3 sets</span>
-                <span class="reps-pill">12 reps</span>
+                <span class="reps-pill">8 each shape reps</span>
                 <span class="bw-pill">Bodyweight</span>
             </div>
-            <div class="weight-row">
-                <label>Bodyweight:</label>
-                <input type="number" placeholder="—" min="0" step="0.5">
-            </div>
-        </div>
-        <div class="exercise-card">
-            <div class="exercise-name">Reverse Snow Angel (prone)</div>
-            <div class="exercise-desc">Lie face down with arms at your sides, lift arms and shoulders off the ground while sweeping in a snow angel pattern.</div>
-            <div class="exercise-meta">
-                <span class="sets-pill">3 sets</span>
-                <span class="reps-pill">12 reps</span>
-                <span class="bw-pill">Bodyweight</span>
-            </div>
-            <div class="weight-row">
-                <label>Bodyweight:</label>
-                <input type="number" placeholder="—" min="0" step="0.5">
-            </div>
+            <div class="weight-row"><label>Bodyweight:</label><input type="number" placeholder="—" min="0" step="0.5"></div>
         </div>
         </div>
-
         <div class="muscle-group">
             <h2 class="muscle-title">Biceps</h2>
-                    <div class="exercise-card">
-            <div class="exercise-name">DB Curl</div>
-            <div class="exercise-desc">Stand with dumbbells at your sides and curl the weights up toward your shoulders, turning your palms upward at the top.</div>
+        <div class="exercise-card">
+            <div class="exercise-name">DB Zottman Curl</div>
+            <div class="exercise-desc">Curl palms-up, rotate at the top, and lower palms-down to hit biceps and forearms.</div>
             <div class="exercise-meta">
                 <span class="sets-pill">3 sets</span>
                 <span class="reps-pill">10–12 reps</span>
                 <span class="weight-pill">Weight (lb)</span>
             </div>
-            <div class="weight-row">
-                <label>Weight (lb):</label>
-                <input type="number" placeholder="—" min="0" step="0.5">
-            </div>
+            <div class="weight-row"><label>Weight (lb):</label><input type="number" placeholder="—" min="0" step="0.5"></div>
         </div>
         <div class="exercise-card">
-            <div class="exercise-name">DB Hammer Curl</div>
-            <div class="exercise-desc">Curl dumbbells up with a neutral grip (palms facing each other) — hits the brachialis and outer bicep.</div>
+            <div class="exercise-name">Cross-Body Hammer Curl</div>
+            <div class="exercise-desc">Curl the dumbbell toward the opposite shoulder to emphasize brachialis.</div>
             <div class="exercise-meta">
                 <span class="sets-pill">3 sets</span>
-                <span class="reps-pill">12–15 reps</span>
+                <span class="reps-pill">10–12/side reps</span>
                 <span class="weight-pill">Weight (lb)</span>
             </div>
-            <div class="weight-row">
-                <label>Weight (lb):</label>
-                <input type="number" placeholder="—" min="0" step="0.5">
-            </div>
+            <div class="weight-row"><label>Weight (lb):</label><input type="number" placeholder="—" min="0" step="0.5"></div>
         </div>
         <div class="exercise-card">
-            <div class="exercise-name">DB Concentration Curl</div>
-            <div class="exercise-desc">Sit down, brace your elbow against your inner thigh, and curl the dumbbell up focusing on the bicep squeeze.</div>
+            <div class="exercise-name">DB Drag Curl</div>
+            <div class="exercise-desc">Pull elbows back as the dumbbells slide up your torso for a strict bicep squeeze.</div>
             <div class="exercise-meta">
                 <span class="sets-pill">3 sets</span>
-                <span class="reps-pill">12 reps</span>
+                <span class="reps-pill">10–12 reps</span>
                 <span class="weight-pill">Weight (lb)</span>
             </div>
-            <div class="weight-row">
-                <label>Weight (lb):</label>
-                <input type="number" placeholder="—" min="0" step="0.5">
-            </div>
-        </div>
-        <div class="exercise-card">
-            <div class="exercise-name">DB Incline Curl</div>
-            <div class="exercise-desc">Lie back on an incline bench with arms hanging down, curl the weights up keeping the long head stretched.</div>
-            <div class="exercise-meta">
-                <span class="sets-pill">2 sets</span>
-                <span class="reps-pill">12 reps</span>
-                <span class="weight-pill">Weight (lb)</span>
-            </div>
-            <div class="weight-row">
-                <label>Weight (lb):</label>
-                <input type="number" placeholder="—" min="0" step="0.5">
-            </div>
+            <div class="weight-row"><label>Weight (lb):</label><input type="number" placeholder="—" min="0" step="0.5"></div>
         </div>
         </div>
-
     </div>
-
-    <div class="card">
-        <h2 class="section-title">❄ Cool-Down / Stretch (2 min)</h2>
-        <ul class="cooldown-list">
-            <li>❄ Foam roll lats (30 sec/side)</li><li>❄ Seated forward fold — touch toes or shins (60 sec)</li><li>❄ Floor lat stretch (30 sec/side)</li><li>❄ Wrist circles and flexor stretch</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2 class="section-title">📈 Progressive Overload Log</h2>
-        <table class="log-table">
-            <thead>
-                <tr>
-                    <th>Muscle</th>
-                    <th>Exercise</th>
-                    <th>Sets</th>
-                    <th>Reps</th>
-                    <th>Set 1 (lb)</th>
-                    <th>Set 2 (lb)</th>
-                    <th>Set 3 (lb)</th>
-                    <th>Set 4 (lb)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-            <td class="log-muscle">Back</td>
-            <td class="log-exercise">DB Bent-Over Row</td>
-            <td class="log-sets">4</td>
-            <td class="log-reps">8–10</td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-        </tr><tr>
-            <td class="log-muscle">Back</td>
-            <td class="log-exercise">Single-Arm DB Row</td>
-            <td class="log-sets">3</td>
-            <td class="log-reps">10–12</td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-        </tr><tr>
-            <td class="log-muscle">Back</td>
-            <td class="log-exercise">DB Renegade Row</td>
-            <td class="log-sets">3</td>
-            <td class="log-reps">8–10</td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-        </tr><tr>
-            <td class="log-muscle">Back</td>
-            <td class="log-exercise">DB Romanian Deadlift</td>
-            <td class="log-sets">3</td>
-            <td class="log-reps">10–12</td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-        </tr><tr>
-            <td class="log-muscle">Back</td>
-            <td class="log-exercise">Superman Hold</td>
-            <td class="log-sets">3</td>
-            <td class="log-reps">12</td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-        </tr><tr>
-            <td class="log-muscle">Back</td>
-            <td class="log-exercise">Reverse Snow Angel (prone)</td>
-            <td class="log-sets">3</td>
-            <td class="log-reps">12</td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-        </tr><tr>
-            <td class="log-muscle">Biceps</td>
-            <td class="log-exercise">DB Curl</td>
-            <td class="log-sets">3</td>
-            <td class="log-reps">10–12</td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-        </tr><tr>
-            <td class="log-muscle">Biceps</td>
-            <td class="log-exercise">DB Hammer Curl</td>
-            <td class="log-sets">3</td>
-            <td class="log-reps">12–15</td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-        </tr><tr>
-            <td class="log-muscle">Biceps</td>
-            <td class="log-exercise">DB Concentration Curl</td>
-            <td class="log-sets">3</td>
-            <td class="log-reps">12</td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-        </tr><tr>
-            <td class="log-muscle">Biceps</td>
-            <td class="log-exercise">DB Incline Curl</td>
-            <td class="log-sets">2</td>
-            <td class="log-reps">12</td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-            <td><input type="number" placeholder="—" min="0" step="0.5" class="log-input"></td>
-        </tr>
-            </tbody>
-        </table>
-    </div>
-
+    <div class="card"><h2 class="section-title">❄ Cool-Down / Stretch (2 min)</h2><ul class="cooldown-list"><li>❄ Lat stretch on couch/chair, 45 sec/side</li><li>❄ Forearm flexor stretch, 30 sec/side</li><li>❄ Child pose with side reach, 45 sec/side</li><li>❄ Slow breathing in prone position, 60 sec</li></ul></div>
+    <div class="card"><h2 class="section-title">📈 Progressive Overload Log</h2><table class="log-table"><thead><tr><th>Muscle</th><th>Exercise</th><th>Sets</th><th>Reps</th><th>Set 1 (lb)</th><th>Set 2 (lb)</th><th>Set 3 (lb)</th><th>Set 4 (lb)</th></tr></thead><tbody>
+                <tr><td class="log-muscle">Back</td><td class="log-exercise">Chest-Supported DB Row on Couch</td><td class="log-sets">4</td><td class="log-reps">8–12</td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td></tr>
+                <tr><td class="log-muscle">Back</td><td class="log-exercise">Single-Arm DB Row</td><td class="log-sets">3</td><td class="log-reps">10–12/side</td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td></tr>
+                <tr><td class="log-muscle">Back</td><td class="log-exercise">DB Pullover Lat Focus</td><td class="log-sets">3</td><td class="log-reps">10–12</td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td></tr>
+                <tr><td class="log-muscle">Back</td><td class="log-exercise">DB Row with 2-Second Squeeze</td><td class="log-sets">3</td><td class="log-reps">10–12</td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td></tr>
+                <tr><td class="log-muscle">Back</td><td class="log-exercise">Prone Y-T-W Raise</td><td class="log-sets">3</td><td class="log-reps">8 each shape</td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td></tr>
+                <tr><td class="log-muscle">Biceps</td><td class="log-exercise">DB Zottman Curl</td><td class="log-sets">3</td><td class="log-reps">10–12</td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td></tr>
+                <tr><td class="log-muscle">Biceps</td><td class="log-exercise">Cross-Body Hammer Curl</td><td class="log-sets">3</td><td class="log-reps">10–12/side</td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td></tr>
+                <tr><td class="log-muscle">Biceps</td><td class="log-exercise">DB Drag Curl</td><td class="log-sets">3</td><td class="log-reps">10–12</td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td><td><input class="log-input" type="text"></td></tr>
+            </tbody></table></div>
     <div class="footer">TJ's Workout Planner · Goal: 165 → 180 lb</div>
-</body>
-</html>
+</body></html>
